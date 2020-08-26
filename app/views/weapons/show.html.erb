@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Weapon level:</strong>
+  <%= @weapon.title %>
+</p>
+
+<p>
   <strong>Weaponname:</strong>
   <%= @weapon.weaponName %>
 </p>
@@ -23,6 +28,11 @@
 <p>
   <strong>Weapon level:</strong>
   <%= @weapon.weapon_level %>
+</p>
+
+<p>
+  <strong>Weapon level:</strong>
+  <%= @weapon.current_power %>
 </p>
 
 <%= link_to 'Edit', edit_weapon_path(@weapon) %> |

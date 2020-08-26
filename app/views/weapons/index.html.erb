@@ -5,11 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Weaponname</th>
-      <th>Description</th>
-      <th>Power base</th>
-      <th>Power step</th>
-      <th>Weapon level</th>
+      <th>Weapon</th>
+      <th>Current Power</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +14,8 @@
   <tbody>
     <% @weapons.each do |weapon| %>
       <tr>
-        <td><%= weapon.weaponName %></td>
-        <td><%= weapon.description %></td>
-        <td><%= weapon.power_base %></td>
-        <td><%= weapon.power_step %></td>
-        <td><%= weapon.weapon_level %></td>
+        <td><%= weapon.title %></td>
+        <td><%= weapon.current_power %></td>
         <td><%= link_to 'Show', weapon %></td>
         <td><%= link_to 'Edit', edit_weapon_path(weapon) %></td>
         <td><%= link_to 'Destroy', weapon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
