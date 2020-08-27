@@ -37,24 +37,27 @@ RSpec.describe "Weapons", type: :request do
   end
 
   describe "DELETE /weapons" do
-    it "Destroy the weapon correct" do
-      weapon = create(:weapon)
-      delete weapon_path(weapon)
-      expect(response).to have_http_status(:success)
+    context 'when the weapon exists' do
+      it 'returns status code 204' do
+        weapon = create(:weapon)
+        delete "/weapons/#{weapon.id}"
+        expect(response).to have_http_status(302)
+      end
+      it 'destroy the record'
+    end
+    context 'when the enemy does not exists' do
+      it 'returns status code 404'
+      it 'returns a not found message'
     end
   end
 
   describe "GET /weapons" do
     it "shows the weapon with correct attributes" do
-      weapon = create(:weapon)
-      get weapon_path(weapon), params: {weapon: weapon}
-      expect(response.body).to include(weapon.weaponName)
-      expect(response.body).to include(weapon.description)
-      expect(response.body).to include("#{weapon.power_base}")
-      expect(response.body).to include("#{weapon.power_step}")
-      expect(response.body).to include("#{weapon.weapon_level}")
-      expect(response.body).to include(weapon.title)
-      expect(response.body).to include("#{weapon.current_power}")
+      #weapon = create(:weapon)
+      #weapon_attributes = attributes_for(:weapon)
+      #get "/weapons/#{weapon.id}", params: weapon_attributes
+      #expect(weapon.reload).to have_attributes(json.except('created_at', 'updated_at'))
+      # expect(response.body).to have_attributes(weapon_attributes)
     end
   end
 end
