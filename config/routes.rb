@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :weapons
   resources :users, only: [:index, :create]
-  resources :enemies, only: [:update, :destroy]
+  resources :enemies
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

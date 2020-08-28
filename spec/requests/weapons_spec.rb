@@ -56,6 +56,7 @@ RSpec.describe "Weapons", type: :request do
       #weapon = create(:weapon)
       #weapon_attributes = attributes_for(:weapon)
       #get "/weapons/#{weapon.id}", params: weapon_attributes
+
       #expect(weapon.reload).to have_attributes(json.except('created_at', 'updated_at'))
       # expect(response.body).to have_attributes(weapon_attributes)
     end
